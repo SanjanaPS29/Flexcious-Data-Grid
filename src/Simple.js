@@ -8,28 +8,31 @@ function Simple() {
       <h1>Student Marks Sheet</h1>
       <ReactDataGrid
         styles={ApiStyles.getThemeStyles("officeblue")}
-        width={"95%"}
-        forcePagerRow={true}
-        enableExport={true}
-        enablePrint={true}
-        enablePreferencePersistence={true}
-        horizontalScrollPolicy={"off"}
-        footerDrawTopBorder
-        enableFilters={true}
-        enableFooters={true}
-        editable
-        enableDrop
+         headerRowHeight={100}
         enablePdf
-        showSpinnerOnFilterPageSort
+        forcePagerRow={true}
+         enableExport={true}
+        enablePrint={true}
+        //enablePreferencePersistence
+         showSpinnerOnFilterPageSort
+         horizontalScrollPolicy={"off"}
+         footerDrawTopBorder
+         enableFilters={true}
+        enableFooters={true}
+         editable
+         enableDrop
+         enableEagerDraw
+        selectedKeyField={"id"} 
+        enableSelectionCascade
         enableMultiColumnSort
-        useCompactPreferences
+         useCompactPreferences
         dataProvider={[
-          { id: "1", name: "San", marks1: "8", marks2: "9", rank: "1.11" },
+          { id: "1", name: "San", marks1: "8", marks2: "8", rank: "1.11" },
           { id: "2", name: "Yash", marks1: "8", marks2: "9", rank: "11.1" },
-          { id: "3", name: "Deep", marks1: "7", marks2: "9", rank: "-111" },
+          { id: "3", name: "Deep", marks1: "7", marks2: "8", rank: "-111" },
           { id: "4", name: "Jan", marks1: "8", marks2: "9", rank: "2.34" },
           { id: "5", name: "Prati", marks1: "8", marks2: "9", rank: "22.2" },
-          { id: "6", name: "San", marks1: "8", marks2: "9", rank: "1.11" },
+          { id: "6", name: "San", marks1: "8", marks2: "8", rank: "1.11" },
           { id: "7", name: "Yash", marks1: "8", marks2: "9", rank: "11.1" },
           { id: "8", name: "Deep", marks1: "7", marks2: "9", rank: "-111" },
           { id: "9", name: "Jan", marks1: "8", marks2: "9", rank: "2.34" },
@@ -39,16 +42,16 @@ function Simple() {
           { id: "13", name: "Deep", marks1: "7", marks2: "9", rank: "-111" },
           { id: "14", name: "Jan", marks1: "8", marks2: "9", rank: "2.34" },
           { id: "15", name: "Prati", marks1: "8", marks2: "9", rank: "22.2" },
-          { id: "16", name: "San", marks1: "8", marks2: "9", rank: "1.11" },
-          { id: "17", name: "Yash", marks1: "8", marks2: "9", rank: "11.1" },
-          { id: "18", name: "Deep", marks1: "7", marks2: "9", rank: "-111" },
+          { id: "16", name: "San", marks1: "8", marks2: "8", rank: "1.11" },
+          { id: "17", name: "Yash", marks1: "8", marks2: "8", rank: "11.1" },
+          { id: "18", name: "Deep", marks1: "7", marks2: "8", rank: "-111" },
           { id: "19", name: "Jan", marks1: "8", marks2: "9", rank: "2.34" },
           { id: "20", name: "Prati", marks1: "8", marks2: "9", rank: "22.2" },
           { id: "20", name: "Prati", marks1: "8", marks2: "9", rank: "22.2" },
           { id: "20", name: "Prati", marks1: "8", marks2: "9", rank: "22.2" },
         ]}
       >
-          <ReactDataGridColumnLevel selectedKeyField={'id'} enablePaging pageSize={3} >
+          <ReactDataGridColumnLevel enableFilters enablePaging initialSortField={"id"} pageSize={5} enableFooters selectedKeyField={"id"} >
    
         <ReactDataGridColumn
           dataField="id"
@@ -76,7 +79,7 @@ function Simple() {
           dataField="marks1"
           headerText="Maths"
           id='marks1'
-          filterControl="MultiSelectComboBox"
+          filterControl="ComboBox"
           filterOperation="Contains"
           footerOperation="sum"
           filterComboBoxWidth='150'
@@ -90,8 +93,9 @@ function Simple() {
           footerOperation="sum"
           id='marks2'
         />
-        <ReactDataGridColumn dataField="rank" id='rank'  headerWordWrap truncateToFit/>
+        <ReactDataGridColumn dataField="rank" id='rank'  headerWordWrap truncateToFit columnWidthMode="fitToContent" />
         <ReactDataGridColumn headerText={""} excludeFromSettings excludeFromPrint excludeFromExport paddingLeft={"0"} paddingRight={"0"} width={1} minWidth={1} />
+        <ReactDataGridColumn excludeFromSettings excludeFromPrint excludeFromExport />
         </ReactDataGridColumnLevel>
       </ReactDataGrid>
     </div>
