@@ -12,7 +12,7 @@ function App() {
        <ItemRenderers/>
     <Simple/>
    
-    <NestedData/>
+    {/* <NestedData/> */}
     </div>
   );
 }

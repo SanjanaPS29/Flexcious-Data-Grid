@@ -19,6 +19,7 @@ function Simple() {
          footerDrawTopBorder
          enableFilters={true}
         enableFooters={true}
+        preferencePersistenceKey="editableCells"
          editable
          enableDrop
          enableEagerDraw
