@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect,useState} from "react";
 import {ComboBox,Constants,flexiciousNmsp,UIComponent,SystemConstants} from "flexicious-react-datagrid";
 
 
@@ -25,7 +25,7 @@ export default class ComboBoxItemEditor extends ComboBox {
   initialize() {
     const data=this.grid.props.dataProvider;
     console.log(data.state);
-    const states=[];
+    let states=[];
     data.forEach(element => {
       states.push(element.state);
     });

@@ -56,7 +56,7 @@ function ItemEditors() {
         rowDisabledFunction={getRowDisabled}
         dataProvider={[
           {
-            id: "10012",
+            id: "11012",
             legalName: "Abbott Laborator",
          
               line1: "206 West Rd",
@@ -64,14 +64,14 @@ function ItemEditors() {
               city: { name: "Barrss" },
               state: { name: "New Jersey" ,code:'NJ'},
               country: { name: "United States" },
-            addedDate: "Dec 22,2016",
+            addedDate: new Date(2016, 11, 22),
             annualRevenue: "58,882",
             numEmployee: "55,103",
             earningsPerShare: "4.01",
             lastStockPrice: "24.56",
           },
           {
-            id: "10012",
+            id: "112012",
             legalName: "Adobe",
         
               line1: "206 West Rd",
@@ -80,14 +80,14 @@ function ItemEditors() {
               state: { name: "Ohio" ,code:"OH" },
               country: { name: "United States" },
          
-            addedDate: "Dec 22,2016",
+            addedDate: new Date(2017,10,23),
             annualRevenue: "58,882",
             numEmployee: "55,103",
             earningsPerShare: "4.01",
             lastStockPrice: "24.56",
           },
           {
-            id: "10012",
+            id: "10312",
             legalName: "Adobe Systems",
       
               line1: "206 West Rd",
@@ -96,14 +96,14 @@ function ItemEditors() {
               state: { name: "Penn" , code:'p' },
               country: { name: "United States" },
     
-            addedDate: "Dec 22,2016",
+            addedDate: new Date(2019,3,29),
             annualRevenue: "58,882",
             numEmployee: "55,103",
             earningsPerShare: "4.01",
             lastStockPrice: "24.56",
           },
           {
-            id: "10012",
+            id: "10912",
             legalName: "Abbott Laborator",
 
               line1: "206 West Rd",
@@ -112,7 +112,7 @@ function ItemEditors() {
               state: { name: "New York" , code:'NY'},
               country: { name: "United States" },
      
-            addedDate: "Dec 22,2016",
+            addedDate: new Date(2020,5,20),
             annualRevenue: "58,882",
             numEmployee: "55,103",
             earningsPerShare: "4.01",
@@ -128,7 +128,7 @@ function ItemEditors() {
               state: { name: "North Carolina" , code:'NC' },
               country: { name: "United States" },
        
-            addedDate: "Dec 22,2016",
+            addedDate: new Date(2016,11,22),
             annualRevenue: "58,882",
             numEmployee: "55,103",
             earningsPerShare: "4.01",
@@ -143,7 +143,7 @@ function ItemEditors() {
           headerText="ID"
           filterControl="TextInput"
           editable
-          
+          filterOperation={"Contains"}
           truncateToFit
         
         />
@@ -191,6 +191,7 @@ function ItemEditors() {
           itemEditor={DatePicker}
           editable
           editorDataField="selectedDate"
+          // format="date"
         />
         <ReactDataGridColumn
           dataField="country.name"
