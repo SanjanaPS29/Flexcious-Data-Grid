@@ -5,14 +5,16 @@ import NestedData from './NestedData';
 import ItemRenderers from './ItemRenderers';
 import ItemEditors from './ItemEditors';
 import LevelRender from './LevelRender';
+import EmployeeData from './EmployeeData';
 
 
 function App() {
   return (
     <div className="App">
    
-   <LevelRender/>
-      <ItemEditors/>
+   <EmployeeData/>
+   {/* <LevelRender/> */}
+      {/* <ItemEditors/> */}
        {/* <ItemRenderers/> */}
     {/* <Simple/> */}
    

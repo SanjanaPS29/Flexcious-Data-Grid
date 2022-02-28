@@ -191,7 +191,7 @@ function ItemEditors() {
           itemEditor={DatePicker}
           editable
           editorDataField="selectedDate"
-          // format="date"
+           format="date"
         />
         <ReactDataGridColumn
           dataField="country.name"
