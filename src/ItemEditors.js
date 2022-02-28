@@ -20,7 +20,7 @@ function ItemEditors() {
   }
 
   const itemEditValueCommitHandler=(evt)=>{
-   if(evt.column.dataField === "headquaterAddress.city.name"){
+   if(evt.column.dataField === "city.name"){
      var txt=evt.itemEditor["text"];
      var found=false;
      var items=flexiciousNmsp.SystemContants.cities;
@@ -58,13 +58,12 @@ function ItemEditors() {
           {
             id: "10012",
             legalName: "Abbott Laborator",
-            headquaterAddress: {
+         
               line1: "206 West Rd",
               line2: "Suit #555",
               city: { name: "Barrss" },
               state: { name: "New Jersey" ,code:'NJ'},
               country: { name: "United States" },
-            },
             addedDate: "Dec 22,2016",
             annualRevenue: "58,882",
             numEmployee: "55,103",
@@ -74,13 +73,13 @@ function ItemEditors() {
           {
             id: "10012",
             legalName: "Adobe",
-            headquaterAddress: {
+        
               line1: "206 West Rd",
               line2: "Suit #555",
               city: { name: "Albany" },
               state: { name: "Ohio" ,code:"OH" },
               country: { name: "United States" },
-            },
+         
             addedDate: "Dec 22,2016",
             annualRevenue: "58,882",
             numEmployee: "55,103",
@@ -90,13 +89,13 @@ function ItemEditors() {
           {
             id: "10012",
             legalName: "Adobe Systems",
-            headquaterAddress: {
+      
               line1: "206 West Rd",
               line2: "Suit #",
               city: { name: "Springfield" },
               state: { name: "Penn" , code:'p' },
               country: { name: "United States" },
-            },
+    
             addedDate: "Dec 22,2016",
             annualRevenue: "58,882",
             numEmployee: "55,103",
@@ -106,13 +105,13 @@ function ItemEditors() {
           {
             id: "10012",
             legalName: "Abbott Laborator",
-            headquaterAddress: {
+
               line1: "206 West Rd",
               line2: "Suit #5",
               city: { name: "Grand Raids" },
               state: { name: "New York" , code:'NY'},
               country: { name: "United States" },
-            },
+     
             addedDate: "Dec 22,2016",
             annualRevenue: "58,882",
             numEmployee: "55,103",
@@ -122,13 +121,13 @@ function ItemEditors() {
           {
             id: "10012",
             legalName: "Abbott Laborator",
-            headquaterAddress: {
+  
               line1: "206 West Rd",
               line2: "Sui#555",
               city: { name: "Stroundsburgh" },
               state: { name: "North Carolina" , code:'NC' },
               country: { name: "United States" },
-            },
+       
             addedDate: "Dec 22,2016",
             annualRevenue: "58,882",
             numEmployee: "55,103",
@@ -155,18 +154,18 @@ function ItemEditors() {
           editable
         />
         <ReactDataGridColumn
-          dataField="headquaterAddress.line1"
+          dataField="line1"
           headerText="Address Line 1"
           footerLabel="Count:"
           footerOperation="count"
           editable
         />
         <ReactDataGridColumn
-          dataField="headquaterAddress.line2"
+          dataField="line2"
           headerText="Address Line 2"
         />
         <ReactDataGridColumn
-          dataField="headquaterAddress.city.name"
+          dataField="city.name"
           headerText="City"
           filterControl="MultiSelectComboBox"
           filterComboBoxBuildFromGrid
@@ -174,7 +173,7 @@ function ItemEditors() {
           editable
         />
         <ReactDataGridColumn
-          dataField="headquaterAddress.state.name"
+          dataField="state.name"
           headerText="State"
           filterControl="MultiSelectComboBox"
           filterComboBoxBuildFromGrid
@@ -194,7 +193,7 @@ function ItemEditors() {
           editorDataField="selectedDate"
         />
         <ReactDataGridColumn
-          dataField="headquaterAddress.country.name"
+          dataField="country.name"
           headerText="Country"
           filterControl="MultiSelectComboBox"
           filterComboBoxBuildFromGrid
