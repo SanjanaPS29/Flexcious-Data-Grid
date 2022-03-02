@@ -21,7 +21,8 @@ function NestedData() {
         preferencePersistenceKey={"nesteddata"}
         showSpinnerOnFilterPageSort
         horizontalScrollPolicy={"auto"}
-        enableSelectionCascade
+        enableSelectionCascade={false}
+        
         dataProvider={[
           {
             date: "01/27/2017",

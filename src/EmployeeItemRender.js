@@ -18,27 +18,21 @@
 // }
 // }
 
-
 // export default EmployeeItemRender;
 
+import React from "react";
+function EmployeeItemRender(props) {
+//   const [salaryGet, setSalaryGet] = useState("");
+  const { cell, row, grid, column } = props;
 
-import React,{useState,useEffect} from 'react'
- function EmployeeItemRender(props) {
-     const [salaryGet,setSalaryGet]=useState("");
- const {cell,row,grid,level,column} = props;
+  const salary = row.getData()[column.dataField];
 
- const salary= row.getData()[column.dataField]
+  const PF = 900;
+//   const salaryget = salary - PF;
+//   setSalaryGet(salaryget);
 
- const PF=900;
- const salaryget=salary-PF;
- setSalaryGet(salaryget);
-
- useEffect(()=>{
-
- },setSalaryGet)
-  return (
-    <div>Salary get : {salaryGet}</div>
-  )
+//   useEffect(() => {}, setSalaryGet);
+  return <div>Salary get : {salary - PF}</div>;
 }
 
 export default EmployeeItemRender;

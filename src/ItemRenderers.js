@@ -26,7 +26,6 @@ function ItemRenderers() {
   };
 
   const getWebsiteLink = (item, column) => {
-    console.log("aaaaa");
     const c = (
       <a href={"http://www.google.com?q=" + item.website} target="_blank">
         {item.website}
@@ -53,6 +52,7 @@ function ItemRenderers() {
         enableFilters
         horizontalScrollPolicy={"off"}
         enableFooters
+        
         dataProvider={[
           {
             id: "20800",
@@ -170,7 +170,6 @@ function ItemRenderers() {
           <ReactDataGridColumn
             labelFunction={getWebsiteLink}
             headerText={"WebSite"}
-            enableCellClickRowSelect={false}
             enableCellClickRowSelect={false}
             useHandCursor
             useUnderLine

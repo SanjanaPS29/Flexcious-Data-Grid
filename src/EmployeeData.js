@@ -1,32 +1,115 @@
-import React from 'react';
-import EmployeeItemRender from './EmployeeItemRender';
-import { ReactDataGrid,ReactDataGridColumnLevel,ReactDataGridColumn } from 'flexicious-react-datagrid';
+import React from "react";
+import EmployeeItemRender from "./EmployeeItemRender";
+import Employee from "./EmployeeDetails";
+import {
+  ReactDataGrid,
+  ReactDataGridColumnLevel,
+  ReactDataGridColumn,
+  flexiciousNmsp,
+} from "flexicious-react-datagrid";
+import EmployeeItemEditor from "./EmployeeItemEditor";
 
- function EmployeeData() {
+function EmployeeData() {
+  const getSalary = (item, column) => {
+    const PF = 1000;
+    const val = item.salary - PF;
+    return `Salary get: ${val}`;
+  };
+
+  const profileRenderer = ({ row, cell, column, grid, level }) => {
+    const image = row.getData()[column.dataField];
+
+    return <img src={image} width="50%" />;
+  };
+
+
+const EmployeeInfoLevelRenderer=({row,column,grid,level,cell})=>{
+const data=row.getData()
+const style={border:"solid 1px black", margin:"1px"};
   return (
-    <div>
-   <h1>EmployeeData</h1>
-<ReactDataGrid  width={"90%"} enableFooters enableFilters dataProvider={[
-{id:'1',name:'jhon',states:{name:'Karnataka',code:"KA"},country:"India",phone:"7650079586" , salary:"300000" },
-{id:'2',name:'RM',states:{name:'AndraPradesh',code:"AP"},country:"India",phone:"7659898586" , salary:"350000"},
-{id:'3',name:'V',states:{name:'Kerala',code:"KR"},country:"India",phone:"7659877586" , salary:"10000"},
-{id:'4',name:'Jhoop',states:{name:'Karnataka',code:"KA"},country:"India",phone:"7659875686" , salary:"90000"},
-{id:'5',name:'Kelvin',states:{name:'Tamil Nadu',code:"TA"},country:"India",phone:"7659811586" , salary:"95000"}
-]}>
+  <fieldset>
+<legend>Employee Info</legend>
+<table >
+<tbody style={{style}}>
+  <tr>
+    <td style={{style}}>Name: {data.name}</td>
+    <td style={{style}}>State :{data.states}</td>
+    <td style={{style}}>Phone no:{data.phone}</td>
+  </tr>
+  <tr>
+    <td style={{style}}>Email Id:{data.info.emailId}</td>
+    <td style={{style}}>Address : {data.info.address}</td>
+    <td style={{style}}>Salary : {data.salary}</td>
 
-<ReactDataGridColumnLevel>
-<ReactDataGridColumn  dataField={"id"} headerText={"ID"} textAlign={"right"} footerLabel={"Count:"} filterOperation={"Contains"} filterControl={"TextInput"} footerOperation={"count"} />
-<ReactDataGridColumn dataField={"name"} headerText={"Name"} />
-<ReactDataGridColumn dataField={"states.name"} headerText={"State"} filterControl={"ComboBox"} filterComboBoxBuildFromGrid/>
-<ReactDataGridColumn dataField={"country"} headerText={"country"}  />
-<ReactDataGridColumn dataField={"phone"} headerText={"Phone Number"} />
-<ReactDataGridColumn dataField={"salary"} headerText={"Salary"} itemRenderer={EmployeeItemRender} footerLabel={"Avg :"} footerOperation={"average"}/>
-
-</ReactDataGridColumnLevel>
-</ReactDataGrid>
-    </div>
+  </tr>
+</tbody>
+</table>
+  </fieldset>
   )
 }
 
+
+  return (
+    <div>
+      <h1>EmployeeData</h1>
+      <ReactDataGrid
+        width={"90%"}
+        enableFooters
+        enableFilters
+        editable
+        dataProvider={JSON.parse(JSON.stringify(Employee))}
+      >
+        
+        <ReactDataGridColumnLevel nextLevelRenderer={EmployeeInfoLevelRenderer}  levelRendererHeight={100}>
+          <ReactDataGridColumn type="checkbox" />
+          <ReactDataGridColumn
+            dataField={"id"}
+            headerText={"ID"}
+            textAlign={"right"}
+            footerLabel={"Count:"}
+            filterOperation={"Contains"}
+            filterControl={"TextInput"}
+            footerOperation={"count"}
+          />
+          <ReactDataGridColumn dataField={"name"} headerText={"Name"} />
+
+          <ReactDataGridColumn
+            dataField={"profile"}
+            editable={false}
+            enableCellClickRowSelect={false}
+            headerText={"Profile"}
+            itemRenderer={profileRenderer}
+          />
+
+          <ReactDataGridColumn
+            dataField={"states"}
+            headerText={"State"}
+            filterControl={"MultiSelectComboBox"}
+            filterComboBoxBuildFromGrid
+            filterComboBoxWidth="150"
+            editable
+            itemEditorManagesPersistence
+            useFilterDataProviderForItemEditor
+            itemEditor={EmployeeItemEditor}
+          />
+
+          <ReactDataGridColumn dataField={"country"} headerText={"country"} />
+          <ReactDataGridColumn
+            dataField={"phone"}
+            headerText={"Phone Number"}
+          />
+          <ReactDataGridColumn
+            dataField={"salary"}
+            headerText={"Salary"}
+              // labelFunction={getSalary}
+            itemRenderer={EmployeeItemRender}
+            footerLabel={"Avg :"}
+            footerOperation={"average"}
+          />
+        </ReactDataGridColumnLevel>
+      </ReactDataGrid>
+    </div>
+  );
+}
 
 export default EmployeeData;

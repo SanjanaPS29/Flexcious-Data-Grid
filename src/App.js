@@ -14,11 +14,11 @@ function App() {
    
    <EmployeeData/>
    {/* <LevelRender/> */}
-      {/* <ItemEditors/> */}
-       {/* <ItemRenderers/> */}
-    {/* <Simple/> */}
+      {/* <ItemEditors/>
+       <ItemRenderers/>
+    <Simple/>
    
-    {/* <NestedData/> */}
+    <NestedData/> */}
     </div>
   );
 }
