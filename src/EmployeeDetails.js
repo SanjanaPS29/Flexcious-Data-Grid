@@ -7,8 +7,7 @@
       country: "India",
       phone: "7650079586",
       salary: "300000",
-      info:{emailId:"jhon@gmail",address:"11th street ,1st main , NY"},
-      children:[{designation:"Software engg",project:"E-commerce"}]
+      children:[{designation:"Software engg",project:"E-commerce",emailId:"jhon@gmail",address:"11th street ,1st main , NY"}]
     },
     {
       id: "2",
@@ -28,8 +27,7 @@
       country: "India",
       phone: "7659877586",
       salary: "10000",
-      info:{emailId:"V@gmail",address:"11th street ,1st main , NY"},
-      children:[{designation:"Software engg",project:"E-commerce"}]
+      children:[{designation:"Software engg",project:"E-commerce",emailId:"V@gmail",address:"11th street ,1st main , NY"}]
 
     },
       {
@@ -40,9 +38,7 @@
         country: "India",
         phone: "7659875686",
         salary: "90000",
-      info:{emailId:"Jhoop@gmail",address:"11th street ,1st main , NY"},
-      children:[{designation:"Software engg",project:"E-commerce"}]
-
+      children:[{designation:"Software engg",project:"E-commerce",emailId:"Jhoop@gmail",address:"11th street ,1st main , NY"}]
       },
     {
       id: "5",
@@ -52,8 +48,7 @@
       country: "India",
       phone: "7659811586",
       salary: "95000",
-      info:{emailId:"Kelvin@gmail",address:"11th street ,1st main , NY"},
-      children:[{designation:"Software engg",project:"E-commerce"}]
+      children:[{designation:"Software engg",project:"E-commerce",emailId:"Kelvin@gmail",address:"11th street ,1st main , NY"}]
 
     },
   ]

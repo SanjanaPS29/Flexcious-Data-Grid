@@ -25,30 +25,26 @@ function EmployeeData() {
 
 const EmployeeInfoLevelRenderer=({row,column,grid,level,cell})=>{
 const data=row.getData()
-const style={border:"solid 1px black", margin:"1px"};
+const borderStyle={border:"solid 1px black"};
   return (
   <fieldset>
 <legend>Employee Info</legend>
-<table >
-<tbody style={{style}}>
+<table>
+<tbody style={borderStyle}>
   <tr>
-    <td style={{style}}>Name: {data.name}</td>
-    <td style={{style}}>State :{data.states}</td>
-    <td style={{style}}>Phone no:{data.phone}</td>
+    <td style={borderStyle}>Name: {data.designation}</td>
+    <td style={borderStyle}>State :{data.project}</td>
+  
   </tr>
   <tr>
-    <td style={{style}}>Email Id:{data.info.emailId}</td>
-    <td style={{style}}>Address : {data.info.address}</td>
-    <td style={{style}}>Salary : {data.salary}</td>
-
+    <td style={borderStyle}>Email Id:{data.emailId}</td>
+    <td style={borderStyle}>Address : {data.address}</td>
   </tr>
 </tbody>
 </table>
   </fieldset>
   )
 }
-
-
   return (
     <div>
       <h1>EmployeeData</h1>
@@ -59,8 +55,7 @@ const style={border:"solid 1px black", margin:"1px"};
         editable
         dataProvider={JSON.parse(JSON.stringify(Employee))}
       >
-        
-        <ReactDataGridColumnLevel nextLevelRenderer={EmployeeInfoLevelRenderer}  levelRendererHeight={100}>
+        <ReactDataGridColumnLevel childrenField={"children"}>
           <ReactDataGridColumn type="checkbox" />
           <ReactDataGridColumn
             dataField={"id"}
@@ -106,6 +101,10 @@ const style={border:"solid 1px black", margin:"1px"};
             footerLabel={"Avg :"}
             footerOperation={"average"}
           />
+        <ReactDataGridColumnLevel nextLevelRenderer={EmployeeInfoLevelRenderer}  levelRendererHeight={100}>
+        <ReactDataGridColumn dataField={"designation"} headerText={"Designation"}/>
+        <ReactDataGridColumn dataField={"project"} headerTExt={"Project"}/>
+        </ReactDataGridColumnLevel>
         </ReactDataGridColumnLevel>
       </ReactDataGrid>
     </div>
