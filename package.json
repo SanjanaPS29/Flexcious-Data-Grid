@@ -9,7 +9,7 @@
     "flexicious-react-datagrid-styles": "latest",
     "react": "16.5.2",
     "react-dom": "16.5.2",
-    "react-scripts": "2.0.3",
+    "react-scripts": "^5.0.0",
     "react-select": "^5.2.2"
   },
   "devDependencies": {

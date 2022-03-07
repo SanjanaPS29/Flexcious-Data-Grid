@@ -14,7 +14,7 @@
       name: "RM",
       profile:'/image/person3.jfif',
       states: "AndraPradesh",
-      country: "India",
+      country: "Japan",
       phone: "7659898586",
       salary: "350000",
       info:{emailId:"RM@gmail",address:"11th street ,1st main , NY"}
@@ -24,7 +24,7 @@
       name: "V",
       profile:'/image/person3.jfif',
       states: "Kerala",
-      country: "India",
+      country: "South Korea",
       phone: "7659877586",
       salary: "10000",
       children:[{designation:"Software engg",project:"E-commerce",emailId:"V@gmail",address:"11th street ,1st main , NY"}]

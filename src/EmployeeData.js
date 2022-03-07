@@ -1,6 +1,7 @@
 import React from "react";
 import EmployeeItemRender from "./EmployeeItemRender";
 import Employee from "./EmployeeDetails";
+
 import {
   ReactDataGrid,
   ReactDataGridColumnLevel,
@@ -8,6 +9,7 @@ import {
   flexiciousNmsp,
 } from "flexicious-react-datagrid";
 import EmployeeItemEditor from "./EmployeeItemEditor";
+import CountryItemEditor from "./CountryItemEditor";
 
 function EmployeeData() {
   const getSalary = (item, column) => {
@@ -76,6 +78,18 @@ const borderStyle={border:"solid 1px black"};
             itemRenderer={profileRenderer}
           />
 
+
+<ReactDataGridColumn
+            dataField={"country"}
+            headerText={"Country"}
+            filterControl={"MultiSelectComboBox"}
+            filterComboBoxBuildFromGrid
+            filterComboBoxWidth="150"
+            editable
+            itemEditorManagesPersistence
+            itemRenderer={CountryItemEditor}
+          />
+
           <ReactDataGridColumn
             dataField={"states"}
             headerText={"State"}
@@ -84,11 +98,10 @@ const borderStyle={border:"solid 1px black"};
             filterComboBoxWidth="150"
             editable
             itemEditorManagesPersistence
-            useFilterDataProviderForItemEditor
+            // useFilterDataProviderForItemEditor
             itemEditor={EmployeeItemEditor}
           />
 
-          <ReactDataGridColumn dataField={"country"} headerText={"country"} />
           <ReactDataGridColumn
             dataField={"phone"}
             headerText={"Phone Number"}
